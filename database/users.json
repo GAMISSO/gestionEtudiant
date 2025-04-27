@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1745709542,
+        "matricule": "ETU1745709542",
+        "nom": "AAA",
+        "prenom": "ZZZ",
+        "email": "AAA@gmail.com",
+        "photo": "photo.png"
+    },
+    {
+        "id": 1745709658,
+        "matricule": "ETU1745709658",
+        "nom": "RRR",
+        "prenom": "ZZZ",
+        "email": "RRR@gamil.com",
+        "photo": "photo.png"
+    }
+]
