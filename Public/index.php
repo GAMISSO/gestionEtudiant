@@ -1,7 +1,7 @@
 <?php
 define("WEB_ROOT","http://localhost:80");
 $page=isset($_GET["page"])?$_GET["page"]:"dashboard";
-
+//$page c'est une variable  qui contient le nom de la page à afficher
 switch ($page) {
     case "dashboard":
         require_once "../Controller/ListerEtudiant.controller.php";

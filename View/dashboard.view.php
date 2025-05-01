@@ -33,7 +33,22 @@
         <input type="file" accept="image/*" id="photo" name="photo" required>
         <button type="submit" class="submit">Ajouter Étudiant</button>
       </form>
-      <?php createEtudiant($nom, $prenom, $email, $photo); ?>
+      <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $nom = $_POST["nom"];
+                $prenom = $_POST["prenom"];
+                $email = $_POST["email"];
+                $photo = $_FILES["photo"]; // $_FILES est utilisé pour les fichiers
+
+                if ($nom == "" || $prenom == "" || $email == "" || $photo == "") {
+                    echo "<p class='error'>Tous les champs sont obligatoires.</p>";
+                } else {
+                    // Appel de la fonction pour enregistrer l'étudiant
+                    createEtudiant($nom, $prenom, $email, $photo);
+                }
+            }
+        ?>
+      
     </div>
   </section>
 
@@ -52,9 +67,13 @@
             <?php foreach ($Etudiants as $Etudiant) :?>
             <tbody>
                 <tr>
-                    <td><?php $Etudiant["nom"] ?></td>
-                    <td><?php $Etudiant["email"] ?></td>
-                    <td><?php $Etudiant["matricule"] ?></td>
+                    <td><?= $Etudiant["nom"] ?></td>
+                    <td><?= $Etudiant["email"] ?></td>
+                    <td><?= $Etudiant["matricule"] ?></td>
+                    <td>
+                         <button type="submit" class="delete">Supprimer</button>
+                         <button type="submit" class="addGroupe">Ajouter à un groupe</button>
+                    </td>
                 </tr>
             </tbody>
             <?php endforeach; ?>

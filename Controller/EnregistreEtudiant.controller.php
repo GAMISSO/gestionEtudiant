@@ -1,5 +1,4 @@
 <?php
-require_once '../Model/enregistreEtudiant.model.php';
 // $name = $_POST['name'] ?? '';
 // $email = $_POST['email'] ?? '';
 // $prenom = $_POST['prenom'] ?? '';

@@ -6,6 +6,7 @@ function createEtudiant($nom, $prenom, $email, $photo) {
 
     // Lire le contenu du fichier JSON
     $data = json_decode(file_get_contents($file), true);
+    //$data devient une liste
 
     // Simuler une donnée venant d’un formulaire
     $newEtudiant = [
